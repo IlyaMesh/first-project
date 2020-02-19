@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <!-- Версия модели в проекте. Используется для синтаксической проверки данного файла по xsd схеме -->
+  <modelVersion>4.0.0</modelVersion>
+  <!--
+    Это самый верхний модуль нашего приложения.
+    Он не содержит в себе ни какого кода. Лишь включает в себя дочернии модули с функционалом.
+    Модуль - это совокупность других файлом в папке которая содержит в себе pom.xml.
+  -->
+
+  <!--
+    Каждый модуль идентифицируется парой groupId и artifactId
+
+    groupId - идентификатор организации или группы связанных модулей. Например все модули у этого
+    приложения имеют одинаковый groupId
+
+    artifactId - Непосредственный идентификатор данного модуля. Должен быть уникален в группе.
+   -->
+  <groupId>first-project</groupId>
+  <artifactId>first-project</artifactId>
+  <packaging>pom</packaging>
+
+  <!--
+    Версия данного модуля. Используется для того чтобы выбрать конкретный пакет изменений (jar или war)
+    для данного модуля.
+
+    Как правило разработка программного продукта подразумевает постоянно изменения и это поле
+    позволяет более конкретизировать, например стабильную версия программного продукта или не стабильную.
+   -->
+  <version>1.0-SNAPSHOT</version>
+
+  <!--
+    Здесь указанны дочерние модули для того, чтобы maven смог правильно выстроить иерархию.
+   -->
+  <modules>
+    <module>testmodule</module>
+    <module>qulice</module>
+    <module>backend</module>
+    <module>frontend</module>
+    <module>warcompile</module>
+  </modules>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>8</source>
+          <target>8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

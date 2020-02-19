@@ -1,0 +1,16 @@
+<!--
+  ~ Copyright
+  -->
+
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+  <g:HTMLPanel>
+    <span> Span span span! </span>
+    <span> More span span span! </span>
+    <span> And more span span span! </span>
+    <span> More more and more span span span! </span>
+    <span> MOOOOORRRREEEE Span span span! </span>
+    <span> Span span span! </span>
+    <span> Enough </span>
+  </g:HTMLPanel>
+</ui:UiBinder>

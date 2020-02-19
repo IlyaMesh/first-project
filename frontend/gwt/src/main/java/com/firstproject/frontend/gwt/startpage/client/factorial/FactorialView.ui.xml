@@ -1,0 +1,17 @@
+<!--
+  ~ Copyright
+  -->
+
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+  <g:HTMLPanel>
+    <g:TextBox ui:field="input"/>
+    <div>
+      <g:RadioButton ui:field="flat" name="typeCalculation">Flat</g:RadioButton>
+      <g:RadioButton ui:field="recursive" name="typeCalculation">Recursive</g:RadioButton>
+      <g:RadioButton ui:field="auto" name="typeCalculation">Auto</g:RadioButton>
+    </div>
+    <g:Button ui:field="calculate">Calculate</g:Button>
+    <g:Label ui:field="output"/>
+  </g:HTMLPanel>
+</ui:UiBinder>

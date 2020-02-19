@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>frontend</artifactId>
+    <groupId>first-project</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>gwt</artifactId>
+  <packaging>war</packaging>
+
+  <properties>
+    <gwt.version>2.8.2</gwt.version>
+    <gin.version>2.1.2</gin.version>
+    <guice.version>3.0</guice.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>first-project</groupId>
+      <artifactId>model</artifactId>
+      <version>${version}</version>
+      <type>jar</type>
+      <scope>compile</scope>
+    </dependency>
+
+    <!--  Для рест сервисов  -->
+    <dependency>
+      <groupId>org.fusesource.restygwt</groupId>
+      <artifactId>restygwt</artifactId>
+      <version>2.2.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.jersey</groupId>
+      <artifactId>jersey-core</artifactId>
+      <version>1.13</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <!--  Основной модуль GWT  -->
+    <dependency>
+      <groupId>com.google.gwt</groupId>
+      <artifactId>gwt-user</artifactId>
+      <version>${gwt.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <!--  Dependency injection от Google для GWT  -->
+    <dependency>
+      <groupId>com.google.gwt.inject</groupId>
+      <artifactId>gin</artifactId>
+      <version>${gin.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.inject</groupId>
+      <artifactId>guice</artifactId>
+      <version>${guice.version}</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>gwt-maven-plugin</artifactId>
+        <version>${gwt.version}</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+        </executions>
+        <!--    Указание html файла для первичного вызова    -->
+        <configuration>
+          <runTarget>index.html</runTarget>
+          <copyWebapp>true</copyWebapp>
+          <hostedWebapp>${project.build.directory}/${project.build.finalName}</hostedWebapp>
+          <workDir>${project.build.directory}/${project.build.finalName}</workDir>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

@@ -1,0 +1,23 @@
+<!--
+  ~ Copyright
+  -->
+
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+  <g:HTMLPanel>
+    <table>
+      <tr>
+        <td>First row:</td>
+        <td>Second row:</td>
+      </tr>
+      <tr>
+        <td>Something one</td>
+        <td>Something two</td>
+      </tr>
+      <tr>
+        <td>One more one</td>
+        <td>One more two</td>
+      </tr>
+    </table>
+  </g:HTMLPanel>
+</ui:UiBinder>
